@@ -1,17 +1,421 @@
 ---
-
+const pageTitle = "Home | Business Bereik";
+const pageDescription = "Jouw strategische partner voor impactvolle marketing en creatieve content.";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={pageDescription} />
+  <title>{pageTitle}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #6B2737;
+      --cream: #FAF6F0;
+      --gold: #C4A882;
+      --gold-faint: rgba(196,168,130,0.35);
+      --gold-muted: rgba(196,168,130,0.5);
+      --text: #FAF6F0;
+      --text-muted: rgba(250,246,240,0.75);
+      --border: rgba(196,168,130,0.3);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem 6vw;
+    }
+
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 5rem;
+      padding: 6rem 6vw;
+    }
+
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--gold-muted);
+      padding: 0.4rem 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5.5vw, 5rem);
+      line-height: 1.05;
+      color: var(--cream);
+      font-weight: 900;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      font-weight: 300;
+      max-width: 420px;
+      margin-bottom: 3rem;
+    }
+
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* ── HERO IMAGE ── */
+    .hero-image {
+      position: relative;
+      height: 680px;
+      max-width: 380px;
+      justify-self: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      inset: 14px -14px -14px 14px;
+      border: 1px solid var(--gold-muted);
+      z-index: -1;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-block;
+      padding: 0.95rem 2rem;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--gold); color: var(--bg); }
+    .btn-primary:hover { background: var(--cream); transform: translateY(-2px); }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 6vw;
+    }
+
+    /* ── INTRO ── */
+    .intro {
+      padding: 7rem 6vw;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .intro-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 2rem;
+    }
+
+    .intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      color: var(--cream);
+      line-height: 1.2;
+      font-style: italic;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .intro p {
+      color: var(--text-muted);
+      line-height: 1.85;
+      font-size: 1rem;
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 6rem 6vw 0;
+    }
+
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .services h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      color: var(--cream);
+      line-height: 1.2;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .service-card {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.25s;
+    }
+
+    .service-card:nth-child(3n) { border-right: none; }
+    .service-card:nth-last-child(-n+3) { border-bottom: none; }
+    .service-card:hover { background: rgba(196,168,130,0.07); }
+
+    .service-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 1.2rem;
+      opacity: 0.6;
+    }
+
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--cream);
+      margin-bottom: 0.75rem;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+
+    /* ── CTA ── */
+    .cta-wrap { padding: 6rem 6vw; }
+
+    .cta {
+      padding: 5rem 4rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 300;
+      max-width: 460px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.75;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 2rem 6vw;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; gap: 3rem; min-height: auto; }
+      .hero-image { height: 420px; max-width: 100%; }
+      .intro { grid-template-columns: 1fr; gap: 2rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .service-card { border-right: none !important; }
+      .service-card:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+      .service-card:last-child { border-bottom: none; }
+      .cta { padding: 3rem 1.5rem; }
+      nav ul { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/">
+      <img src="/images/BB-logo.webp" alt="Business Bereik" height="40" style="display:block;" />
+    </a>
+    <ul>
+      <li><a href="/" class="active">Home</a></li>
+      <li><a href="/diensten">Diensten</a></li>
+      <li><a href="/over">Over</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <span class="hero-eyebrow">Jouw strategische partner</span>
+      <h1>Vergroot jouw <em>online</em> bereik</h1>
+      <p class="hero-subtitle">Impactvolle marketing en creatieve content die jouw boodschap niet alleen hoorbaar maakt — maar onvergetelijk.</p>
+      <div class="hero-actions">
+        <a href="/contact" class="btn btn-primary">Kom in contact</a>
+        <a href="/diensten" class="btn btn-ghost">Bekijk diensten</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="/images/iris_bb.jpg" alt="Iris Guelen - Business Bereik" />
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- INTRO -->
+  <section class="intro">
+    <span class="intro-label">Van onzichtbaar naar onmisbaar</span>
+    <h2>"Heb je moeite om jouw bedrijf op de kaart te zetten?"</h2>
+    <p>Bij Business Bereik ben je aan het juiste adres. Ik denk graag met je mee en bied maatwerk oplossingen om je online aanwezigheid te versterken.</p>
+    <p>Met slimme marketingstrategieën, opvallende content en krachtige SEO zorgen we ervoor dat jouw boodschap niet alleen gehoord, maar ook onthouden wordt!</p>
+    <a href="/over" class="btn btn-ghost" style="margin-top: 1.2rem;">Leer mij kennen</a>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="services-header">
+      <h2>Wat ik voor jou<br/>kan betekenen</h2>
+      <a href="/diensten" class="btn btn-primary">Alle diensten</a>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <h3>Website die werkt</h3>
+        <p>Een professionele site die direct aanspreekt en vertrouwen wekt bij jouw ideale klant.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <h3>Teksten die verhalen vertellen</h3>
+        <p>Frisse, heldere content waar je bezoekers blij van worden en die converteert.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <h3>Slimme contentstrategie</h3>
+        <p>Zodat jouw content niet alleen gezien, maar ook onthouden wordt door de juiste mensen.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <h3>Marketing op maat</h3>
+        <p>Van strategie tot actie, helemaal afgestemd op jouw bedrijf en doelgroep.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <h3>E-mailflows</h3>
+        <p>Gericht en persoonlijk, zodat je e-mails opvallen en klanten aantrekken.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-number">06</div>
+        <h3>Sparren & advies</h3>
+        <p>Samen bekijken we wat er sterker kan, met kleine tweaks die groot verschil maken.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-wrap">
+    <div class="cta">
+      <h2>Tijd voor meer aandacht?</h2>
+      <p>Laten we samen aan de slag gaan om jouw doelen te bereiken. Neem vandaag nog contact op.</p>
+      <a href="/contact" class="btn btn-primary">Kom in contact!</a>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Business Bereik — Alle rechten voorbehouden</span>
+    <nav>
+      <a href="/diensten">Diensten</a> &nbsp;·&nbsp;
+      <a href="/over">Over</a> &nbsp;·&nbsp;
+      <a href="/contact">Contact</a>
+    </nav>
+  </footer>
+
+</body>
 </html>

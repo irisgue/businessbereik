@@ -1,0 +1,222 @@
+---
+const pageTitle = "Contact | Business Bereik";
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #6B2737;
+      --cream: #FAF6F0;
+      --gold: #C4A882;
+      --gold-muted: rgba(196,168,130,0.5);
+      --text: #FAF6F0;
+      --text-muted: rgba(250,246,240,0.75);
+      --border: rgba(196,168,130,0.3);
+    }
+
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+    nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 6vw; }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+    nav a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    nav a:hover, nav a.active { color: var(--gold); }
+
+    /* CONTACT LAYOUT */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      min-height: calc(100vh - 62px);
+    }
+
+    .contact-info {
+      padding: 6rem 4rem 6rem 6vw;
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .page-eyebrow { font-size: 0.72rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1.5rem; }
+
+    .contact-info h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      color: var(--cream); line-height: 1.1;
+      margin-bottom: 1.5rem; font-weight: 900;
+    }
+
+    .contact-info p {
+      font-size: 1rem; line-height: 1.85;
+      color: var(--text-muted); font-weight: 300;
+      margin-bottom: 3rem; max-width: 360px;
+    }
+
+    .contact-details { display: flex; flex-direction: column; gap: 1.8rem; }
+
+    .contact-detail span:first-child {
+      font-size: 0.7rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--gold);
+      font-weight: 500; display: block; margin-bottom: 0.3rem;
+    }
+
+    .contact-detail a, .contact-detail span:last-child {
+      color: var(--text-muted); text-decoration: none; font-size: 0.95rem; font-weight: 300;
+      transition: color 0.2s;
+    }
+
+    .contact-detail a:hover { color: var(--gold); }
+
+    /* FORM */
+    .contact-form {
+      padding: 6rem 6vw 6rem 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-form h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; color: var(--cream);
+      margin-bottom: 2.5rem; font-weight: 700;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 1.2rem; }
+    .form-group { margin-bottom: 1.2rem; }
+
+    label {
+      display: block; font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 0.5rem;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      background: rgba(196,168,130,0.08);
+      border: 1px solid var(--border);
+      color: var(--cream);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem; font-weight: 300;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    input::placeholder, textarea::placeholder { color: var(--text-muted); }
+    select option { background: var(--bg); color: var(--cream); }
+    input:focus, textarea:focus, select:focus { border-color: var(--gold); }
+    textarea { height: 140px; resize: vertical; }
+
+    .btn-submit {
+      width: 100%; padding: 1.1rem;
+      background: var(--gold); color: var(--bg);
+      border: none; font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem; font-weight: 500;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s;
+      margin-top: 0.5rem;
+    }
+
+    .btn-submit:hover { background: var(--cream); }
+
+    footer { padding: 2rem 6vw; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); }
+    footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: var(--gold); }
+
+    @media (max-width: 768px) {
+      .contact-wrap { grid-template-columns: 1fr; }
+      .contact-info { border-right: none; border-bottom: 1px solid var(--border); padding: 4rem 6vw; }
+      .contact-form { padding: 4rem 6vw; }
+      .form-row { grid-template-columns: 1fr; }
+      nav ul { gap: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/"><img src="/images/BB-logo.webp" alt="Business Bereik" height="40" style="display:block;" /></a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/diensten">Diensten</a></li>
+      <li><a href="/over">Over</a></li>
+      <li><a href="/contact" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <span class="page-eyebrow">Neem contact op</span>
+      <h1>Laten we kennismaken</h1>
+      <p>Heb je een vraag, een project in gedachten, of wil je gewoon even sparren? Stuur me een bericht en ik kom zo snel mogelijk bij je terug.</p>
+      <div class="contact-details">
+        <div class="contact-detail">
+          <span>E-mail</span>
+          <a href="mailto:info@businessbereik.nl">info@businessbereik.nl</a>
+        </div>
+        <div class="contact-detail">
+          <span>Website</span>
+          <a href="https://businessbereik.nl">businessbereik.nl</a>
+        </div>
+        <div class="contact-detail">
+          <span>Gevestigd in</span>
+          <span>Nederland</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Stuur een bericht</h2>
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="naam">Naam</label>
+            <input type="text" id="naam" name="naam" placeholder="Jouw naam" />
+          </div>
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="jouw@email.nl" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="onderwerp">Waar gaat het over?</label>
+          <select id="onderwerp" name="onderwerp">
+            <option value="">Selecteer een onderwerp</option>
+            <option>Website laten maken</option>
+            <option>Contentstrategie</option>
+            <option>Copywriting</option>
+            <option>Marketingplan</option>
+            <option>E-mailmarketing</option>
+            <option>Sparren / advies</option>
+            <option>Iets anders</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bericht">Bericht</label>
+          <textarea id="bericht" name="bericht" placeholder="Vertel me meer over jouw project of vraag..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Verstuur bericht →</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <span>© 2026 Business Bereik — Alle rechten voorbehouden</span>
+    <nav>
+      <a href="/diensten">Diensten</a> &nbsp;·&nbsp;
+      <a href="/over">Over</a> &nbsp;·&nbsp;
+      <a href="/contact">Contact</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
