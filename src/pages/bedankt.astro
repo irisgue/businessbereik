@@ -1,0 +1,64 @@
+---
+const pageTitle = "Bedankt! | Business Bereik";
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{pageTitle}</title>
+  <link rel="icon" type="image/png" href="/images/Business_Bereik_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #6B2737; --cream: #FAF6F0; --gold: #C4A882;
+      --text-muted: rgba(250,246,240,0.75); --border: rgba(196,168,130,0.3);
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--cream); min-height: 100vh; display: flex; flex-direction: column; }
+    nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 6vw; }
+    nav ul { list-style: none; display: flex; gap: 2.5rem; }
+    nav a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    nav a:hover { color: var(--gold); }
+    .content { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6rem 6vw; }
+    .icon { font-size: 3rem; margin-bottom: 2rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); color: var(--cream); margin-bottom: 1.5rem; font-weight: 900; }
+    p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.8; font-weight: 300; max-width: 480px; margin-bottom: 3rem; }
+    .btn { display: inline-block; padding: 0.95rem 2rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; background: var(--gold); color: var(--bg); }
+    .btn:hover { background: var(--cream); transform: translateY(-2px); }
+    footer { padding: 2rem 6vw; border-top: 1px solid var(--border); display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted); }
+    footer a { color: var(--text-muted); text-decoration: none; }
+    footer a:hover { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/"><img src="/images/Business_Bereik_logo.png" alt="Business Bereik" height="40" style="display:block;" /></a>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/diensten">Diensten</a></li>
+      <li><a href="/over">Over</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <div class="icon">✉️</div>
+    <h1>Bedankt!</h1>
+    <p>Je bericht is goed ontvangen. Ik neem zo snel mogelijk contact met je op!</p>
+    <a href="/" class="btn">Terug naar home</a>
+  </div>
+
+  <footer>
+    <span>© 2026 Business Bereik — Alle rechten voorbehouden</span>
+    <nav>
+      <a href="/diensten">Diensten</a> &nbsp;·&nbsp;
+      <a href="/over">Over</a> &nbsp;·&nbsp;
+      <a href="/contact">Contact</a>
+    </nav>
+  </footer>
+</body>
+</html>
