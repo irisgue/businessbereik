@@ -8,8 +8,9 @@ const pageTitle = "Contact | Business Bereik";
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{pageTitle}</title>
+  <meta name="description" content="Neem contact op met Business Bereik voor een vrijblijvend kennismakingsgesprek of stel je vraag via het contactformulier." />
   <link rel="icon" type="image/png" href="/images/Business_Bereik_logo.png" />
-  <meta property="og:image" content="https://businessbereik.nl/images/og-image-business-bereik.png" /> <meta property="og:title" content="Business Bereik" /> <meta property="og:description" content="Van onzichtbaar naar onmisbaar. Marketing op maat voor ondernemers." /> <meta property="og:url" content="https://businessbereik.nl" /> <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://businessbereik.nl/images/og-image-business-bereik.png" /> <meta property="og:title" content="Contact | Business Bereik" /> <meta property="og:description" content="Neem contact op met Business Bereik voor een vrijblijvend kennismakingsgesprek of stel je vraag via het contactformulier." /> <meta property="og:url" content="https://businessbereik.nl/contact" /> <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -109,7 +110,7 @@ const pageTitle = "Contact | Business Bereik";
       color: var(--cream);
       font-family: 'DM Sans', sans-serif;
       font-size: 0.95rem; font-weight: 300;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
       outline: none;
     }
 
@@ -182,11 +183,11 @@ const pageTitle = "Contact | Business Bereik";
         <div class="form-row">
           <div class="form-group">
             <label for="naam">Naam</label>
-            <input type="text" id="naam" name="naam" placeholder="Jouw naam" />
+            <input type="text" id="naam" name="naam" placeholder="Jouw naam" required />
           </div>
           <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="jouw@email.nl" />
+            <input type="email" id="email" name="email" placeholder="jouw@email.nl" required />
           </div>
         </div>
         <div class="form-group">
@@ -204,7 +205,7 @@ const pageTitle = "Contact | Business Bereik";
         </div>
         <div class="form-group">
           <label for="bericht">Bericht</label>
-          <textarea id="bericht" name="bericht" placeholder="Vertel me meer over jouw project of vraag..."></textarea>
+          <textarea id="bericht" name="bericht" placeholder="Vertel me meer over jouw project of vraag..." required></textarea>
         </div>
         <button type="submit" class="btn-submit">Verstuur bericht →</button>
       </form>
