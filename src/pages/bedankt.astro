@@ -12,7 +12,8 @@ const pageTitle = "Bedankt! | Business Bereik";
   <link rel="icon" type="image/png" href="/images/Business_Bereik_logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" /></noscript>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -46,12 +47,14 @@ const pageTitle = "Bedankt! | Business Bereik";
     </ul>
   </nav>
 
+  <main>
   <div class="content">
     <div class="icon">✉️</div>
     <h1>Bedankt!</h1>
     <p>Je bericht is goed ontvangen. Ik neem zo snel mogelijk contact met je op!</p>
     <a href="/" class="btn">Terug naar home</a>
   </div>
+  </main>
 
   <footer>
     <span>© 2026 Business Bereik — Alle rechten voorbehouden</span>

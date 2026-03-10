@@ -16,7 +16,8 @@ const pageDescription = "Jouw strategische partner voor impactvolle marketing en
   <meta property="og:image" content="https://businessbereik.nl/images/og-image-business-bereik.png" /> <meta property="og:title" content="Business Bereik" /> <meta property="og:description" content="Van onzichtbaar naar onmisbaar. Marketing op maat voor ondernemers." /> <meta property="og:url" content="https://businessbereik.nl" /> <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" /></noscript>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -363,7 +364,7 @@ const pageDescription = "Jouw strategische partner voor impactvolle marketing en
 
   <nav>
     <a href="/">
-      <img src="/images/Business_Bereik_logo.png" alt="Business Bereik" width="40" height="40" style="display:block;" />
+      <img src="/images/Business_Bereik_logo.webp" alt="Business Bereik" width="40" height="40" style="display:block;" />
     </a>
     <ul>
       <li><a href="/" class="active">Home</a></li>
@@ -373,6 +374,7 @@ const pageDescription = "Jouw strategische partner voor impactvolle marketing en
     </ul>
   </nav>
 
+  <main>
   <!-- HERO -->
   <section class="hero">
     <div>
@@ -385,7 +387,7 @@ const pageDescription = "Jouw strategische partner voor impactvolle marketing en
       </div>
     </div>
     <div class="hero-image">
-      <img src="/images/iris-gradient.webp" alt="Iris Guelen - Business Bereik" width="1024" height="1536" fetchpriority="high" />
+      <img src="/images/iris-gradient.webp" alt="Iris Guelen - Business Bereik" width="980" height="1470" fetchpriority="high" />
     </div>
   </section>
 
@@ -448,6 +450,7 @@ const pageDescription = "Jouw strategische partner voor impactvolle marketing en
       <a href="/contact" class="btn btn-primary">Kom in contact!</a>
     </div>
   </div>
+  </main>
 
   <footer>
     <span>© 2026 Business Bereik — Alle rechten voorbehouden</span>
