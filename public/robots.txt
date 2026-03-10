@@ -3,3 +3,4 @@ Allow: /
 Disallow: /bedankt
 
 Sitemap: https://businessbereik.nl/sitemap-index.xml
+Schemamap: https://businessbereik.nl/schemamap.json

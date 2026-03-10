@@ -1,0 +1,147 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://businessbereik.nl/#website",
+      "url": "https://businessbereik.nl",
+      "name": "Business Bereik",
+      "description": "Marketing op maat voor ondernemers. Van onzichtbaar naar onmisbaar.",
+      "publisher": { "@id": "https://businessbereik.nl/#organization" },
+      "inLanguage": "nl"
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://businessbereik.nl/#organization",
+      "name": "Business Bereik",
+      "description": "Marketing op maat voor ondernemers. Van onzichtbaar naar onmisbaar.",
+      "url": "https://businessbereik.nl",
+      "image": "https://businessbereik.nl/images/og-image-business-bereik.png",
+      "founder": { "@id": "https://businessbereik.nl/#person" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "NL"
+      },
+      "areaServed": "NL",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@businessbereik.nl",
+        "contactType": "customer service",
+        "availableLanguage": "nl"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Diensten van Business Bereik",
+        "itemListElement": [
+          { "@id": "https://businessbereik.nl/diensten#webdesign" },
+          { "@id": "https://businessbereik.nl/diensten#copywriting" },
+          { "@id": "https://businessbereik.nl/diensten#contentstrategie" },
+          { "@id": "https://businessbereik.nl/diensten#marketingplan" },
+          { "@id": "https://businessbereik.nl/diensten#emailmarketing" },
+          { "@id": "https://businessbereik.nl/diensten#advies" }
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://businessbereik.nl/#person",
+      "name": "Iris Guelen",
+      "jobTitle": "Marketeer en Contentstrateeg",
+      "url": "https://businessbereik.nl/over",
+      "image": "https://businessbereik.nl/images/Iris-rechts.webp",
+      "worksFor": { "@id": "https://businessbereik.nl/#organization" },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "NL"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://businessbereik.nl/#webpage",
+      "url": "https://businessbereik.nl/",
+      "name": "Home | Business Bereik",
+      "description": "Jouw strategische partner voor impactvolle marketing en creatieve content.",
+      "isPartOf": { "@id": "https://businessbereik.nl/#website" },
+      "about": { "@id": "https://businessbereik.nl/#organization" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://businessbereik.nl/diensten#webpage",
+      "url": "https://businessbereik.nl/diensten",
+      "name": "Diensten | Business Bereik",
+      "description": "Van contentstrategie en copywriting tot e-mailmarketing en marketingplannen — ontdek hoe Business Bereik jouw bedrijf online zichtbaar maakt.",
+      "isPartOf": { "@id": "https://businessbereik.nl/#website" }
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://businessbereik.nl/over#webpage",
+      "url": "https://businessbereik.nl/over",
+      "name": "Over Iris | Business Bereik",
+      "description": "Leer Iris Guelen kennen — marketeer en contentstrateeg die ondernemers helpt om online zichtbaar te worden en te blijven.",
+      "isPartOf": { "@id": "https://businessbereik.nl/#website" },
+      "about": { "@id": "https://businessbereik.nl/#person" }
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://businessbereik.nl/contact#webpage",
+      "url": "https://businessbereik.nl/contact",
+      "name": "Contact | Business Bereik",
+      "description": "Neem contact op met Business Bereik voor een vrijblijvend kennismakingsgesprek of stel je vraag via het contactformulier.",
+      "isPartOf": { "@id": "https://businessbereik.nl/#website" }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://businessbereik.nl/diensten#webdesign",
+      "name": "Een website die werkt",
+      "serviceType": "Webdesign",
+      "provider": { "@id": "https://businessbereik.nl/#organization" },
+      "areaServed": "NL",
+      "url": "https://businessbereik.nl/diensten"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://businessbereik.nl/diensten#copywriting",
+      "name": "Teksten die jouw verhaal vertellen",
+      "serviceType": "Copywriting",
+      "provider": { "@id": "https://businessbereik.nl/#organization" },
+      "areaServed": "NL",
+      "url": "https://businessbereik.nl/diensten"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://businessbereik.nl/diensten#contentstrategie",
+      "name": "Slimme contentstrategie",
+      "serviceType": "Contentstrategie",
+      "provider": { "@id": "https://businessbereik.nl/#organization" },
+      "areaServed": "NL",
+      "url": "https://businessbereik.nl/diensten"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://businessbereik.nl/diensten#marketingplan",
+      "name": "Compleet marketingplan op maat",
+      "serviceType": "Marketingplan",
+      "provider": { "@id": "https://businessbereik.nl/#organization" },
+      "areaServed": "NL",
+      "url": "https://businessbereik.nl/diensten"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://businessbereik.nl/diensten#emailmarketing",
+      "name": "E-mailflows die converteren",
+      "serviceType": "E-mailmarketing",
+      "provider": { "@id": "https://businessbereik.nl/#organization" },
+      "areaServed": "NL",
+      "url": "https://businessbereik.nl/diensten"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://businessbereik.nl/diensten#advies",
+      "name": "Sparren over wat je al doet",
+      "serviceType": "Advies",
+      "provider": { "@id": "https://businessbereik.nl/#organization" },
+      "areaServed": "NL",
+      "url": "https://businessbereik.nl/diensten"
+    }
+  ]
+}
