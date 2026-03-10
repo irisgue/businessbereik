@@ -41,7 +41,9 @@ const pageDescription = "Jouw strategische partner voor impactvolle marketing en
       position: sticky;
       top: 0;
       z-index: 100;
-      background: var(--bg);
+      background: rgba(107, 39, 55, 0.90);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -149,7 +151,7 @@ const pageDescription = "Jouw strategische partner voor impactvolle marketing en
     }
 
     .btn-primary { background: var(--gold); color: var(--bg); }
-    .btn-primary:hover { background: var(--cream); transform: translateY(-2px); }
+    .btn-primary:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,168,130,0.22); }
 
     .btn-ghost {
       background: transparent;
@@ -234,11 +236,25 @@ const pageDescription = "Jouw strategische partner voor impactvolle marketing en
       border-right: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
       transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
     }
 
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
     .service-card:nth-child(3n) { border-right: none; }
     .service-card:nth-last-child(-n+3) { border-bottom: none; }
-    .service-card:hover { background: rgba(196,168,130,0.07); }
+    .service-card:hover { background: rgba(196,168,130,0.1); }
 
     .service-number {
       font-family: 'Playfair Display', serif;
@@ -274,6 +290,7 @@ const pageDescription = "Jouw strategische partner voor impactvolle marketing en
       text-align: center;
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
+      background: radial-gradient(ellipse at 50% 0%, rgba(196,168,130,0.09) 0%, transparent 65%);
     }
 
     .cta h2 {

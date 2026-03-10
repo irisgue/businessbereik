@@ -28,14 +28,14 @@ const pageTitle = "Over | Business Bereik";
 
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
 
-    nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 6vw; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(107, 39, 55, 0.90); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 6vw; }
     nav ul { list-style: none; display: flex; gap: 2.5rem; }
     nav a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     nav a:hover, nav a.active { color: var(--gold); }
 
     .btn { display: inline-block; padding: 0.95rem 2rem; text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; transition: all 0.2s; cursor: pointer; border: none; }
     .btn-primary { background: var(--gold); color: var(--bg); }
-    .btn-primary:hover { background: var(--cream); transform: translateY(-2px); }
+    .btn-primary:hover { background: var(--cream); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,168,130,0.22); }
     .btn-ghost { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
     .btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
 
@@ -104,8 +104,24 @@ const pageTitle = "Over | Business Bereik";
       padding: 2.5rem 2rem;
       border-right: 1px solid var(--border);
       border-top: 1px solid var(--border);
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
     }
 
+    .waarde::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .waarde:hover::before { transform: scaleX(1); }
+    .waarde:hover { background: rgba(196,168,130,0.07); }
     .waarde:last-child { border-right: none; }
 
     .waarde h3 {
@@ -118,7 +134,7 @@ const pageTitle = "Over | Business Bereik";
 
     /* CTA */
     .cta-wrap { padding: 2rem 6vw 6rem; }
-    .cta { padding: 5rem 4rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .cta { padding: 5rem 4rem; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: radial-gradient(ellipse at 50% 0%, rgba(196,168,130,0.09) 0%, transparent 65%); }
     .cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); color: var(--cream); margin-bottom: 1rem; }
     .cta p { color: var(--text-muted); font-size: 1rem; font-weight: 300; max-width: 460px; margin: 0 auto 2.5rem; line-height: 1.75; }
 
@@ -149,7 +165,7 @@ const pageTitle = "Over | Business Bereik";
 
   <section class="over-hero">
     <div class="over-image">
-      <img src="/images/iris-rechts.jpg" alt="Iris Guelen - Business Bereik" />
+      <img src="/images/Iris-rechts.jpg" alt="Iris Guelen - Business Bereik" />
     </div>
     <div class="over-text">
       <span class="page-eyebrow">Leer mij kennen</span>

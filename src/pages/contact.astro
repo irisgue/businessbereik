@@ -28,7 +28,7 @@ const pageTitle = "Contact | Business Bereik";
 
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); overflow-x: hidden; }
 
-    nav { position: sticky; top: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 6vw; }
+    nav { position: sticky; top: 0; z-index: 100; background: rgba(107, 39, 55, 0.90); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 6vw; }
     nav ul { list-style: none; display: flex; gap: 2.5rem; }
     nav a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     nav a:hover, nav a.active { color: var(--gold); }
@@ -115,7 +115,7 @@ const pageTitle = "Contact | Business Bereik";
 
     input::placeholder, textarea::placeholder { color: var(--text-muted); }
     select option { background: var(--bg); color: var(--cream); }
-    input:focus, textarea:focus, select:focus { border-color: var(--gold); }
+    input:focus, textarea:focus, select:focus { border-color: var(--gold); background: rgba(196,168,130,0.12); box-shadow: 0 0 0 3px rgba(196,168,130,0.08); }
     textarea { height: 140px; resize: vertical; }
 
     .btn-submit {
@@ -128,7 +128,7 @@ const pageTitle = "Contact | Business Bereik";
       margin-top: 0.5rem;
     }
 
-    .btn-submit:hover { background: var(--cream); }
+    .btn-submit:hover { background: var(--cream); box-shadow: 0 8px 24px rgba(196,168,130,0.22); }
 
     footer { padding: 2rem 6vw; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--text-muted); }
     footer a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
