@@ -183,7 +183,10 @@ const pageTitle = "Contact | Business Bereik";
 
     <div class="contact-form">
       <h2>Stuur een bericht</h2>
-      <form name="contact" method="POST" data-netlify="true" action="/bedankt">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="01fb8dbb-1890-43af-9c70-66bfbdbaa79d" />
+        <input type="hidden" name="redirect" value="https://businessbereik.nl/bedankt" />
+        <input type="hidden" name="subject" value="Nieuw bericht via businessbereik.nl" />
         <div class="form-row">
           <div class="form-group">
             <label for="naam">Naam</label>
